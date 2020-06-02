@@ -6,12 +6,10 @@ var CLOUD_X = 100;
 var CLOUD_Y = 10;
 var GAP = 20;
 var FONT_GAP = 15;
-var TEXT_WIDTH = 50;
 var BAR_WIDTH = 40;
 var GRAF_PADDING = 45;
 var GRAF_GAP = 50;
 var BAR_HEIGHT = 150;
-// var barHeight = CLOUD_WIDTH - GAP - TEXT_WIDTH - GAP;
 
 var renderCloud = function(ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -51,8 +49,8 @@ var randomizeSaturation = function() {
   var s = Math.floor(Math.random() * 100);
   return s;
 
-  //return `hsl(0, ${s}, 50%)`;
-}
+
+};
 
 // var roundTime = function() {
 //   var roundedTimes;
@@ -76,7 +74,6 @@ window.renderStatistics = function(ctx, players, times) {
   pushElementToStart(players, times);
 
 
-
   for (var i = 0; i < players.length; i++) {
 
 
@@ -91,14 +88,12 @@ window.renderStatistics = function(ctx, players, times) {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
       ctx.fillStyle = 'hsl(240, ' + randomSaturation + '% , 50%)';
-      console.log(randomSaturation);
     }
 
     ctx.fillRect(CLOUD_X + GRAF_PADDING + (BAR_WIDTH + GRAF_GAP) * i, BAR_HEIGHT - (BAR_HEIGHT * times[i]) / maxTime + GRAF_PADDING * 2, BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
   }
 
-
-  }
+};
 
 
   /*
