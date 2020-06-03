@@ -76,7 +76,7 @@ window.renderStatistics = function (ctx, players, times) {
       ctx.fillStyle = 'hsl(240, ' + Math.floor(Math.random() * 100) + '% , 50%)';
     }
 
-    ctx.fillRect(positionX, positionYs, BAR_WIDTH, barHeightCalculated);
+    ctx.fillRect(positionX, positionY, BAR_WIDTH, barHeightCalculated);
   }
 
 };
