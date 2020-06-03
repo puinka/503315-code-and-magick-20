@@ -63,11 +63,12 @@ window.renderStatistics = function (ctx, players, times) {
 
     var positionX = CLOUD_X + GRAF_PADDING + (BAR_WIDTH + GRAF_GAP) * i;
     var barHeightCalculated = BAR_HEIGHT * times[i] / maxTime;
+    var positionY = BAR_HEIGHT - barHeightCalculated + GRAF_PADDING * 2;
 
     ctx.fillStyle = '#000';
 
     ctx.fillText(players[i], positionX, CLOUD_Y + CLOUD_HEIGHT - GRAF_PADDING + FONT_GAP);
-    ctx.fillText(Math.round(times[i]), positionX, BAR_HEIGHT - barHeightCalculated + GRAF_PADDING * 2 - GAP);
+    ctx.fillText(Math.round(times[i]), positionX, positionY - GAP);
 
     if (i === 0) {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
@@ -75,7 +76,7 @@ window.renderStatistics = function (ctx, players, times) {
       ctx.fillStyle = 'hsl(240, ' + Math.floor(Math.random() * 100) + '% , 50%)';
     }
 
-    ctx.fillRect(positionX, BAR_HEIGHT - barHeightCalculated + GRAF_PADDING * 2, BAR_WIDTH, barHeightCalculated);
+    ctx.fillRect(positionX, positionYs, BAR_WIDTH, barHeightCalculated);
   }
 
 };
