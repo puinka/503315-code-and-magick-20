@@ -2,7 +2,7 @@
 
 (function () {
 
-  window.colorize = function (element, elementColor) {
+  window.colorize = function (element, elementColor, elementInput) {
     element.addEventListener('click', function () {
       var color = window.util.randomizeColor(elementColor);
       if (element.tagName.toLowerCase() === 'div') {
@@ -10,6 +10,7 @@
       } else {
         element.style.fill = color;
       }
+      elementInput.value = color;
     });
   };
 })();
