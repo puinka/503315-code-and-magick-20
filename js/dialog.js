@@ -8,6 +8,8 @@
 
   var openPopup = function () {
     setup.classList.remove('hidden');
+    setup.style.top = 80 + 'px';
+    setup.style.left = 50 + '%';
     document.addEventListener('keydown', onPopupEscPress);
   };
 
