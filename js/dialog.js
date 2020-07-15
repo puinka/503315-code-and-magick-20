@@ -38,4 +38,15 @@
     window.util.isEnterEvent(evt, closePopup);
   });
 
+  var form = setup.querySelector('.setup-wizard-form');
+
+  form.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+    window.backend.save(new FormData(form), onLoad, window.backend.onError);
+  });
+
+  var onLoad = function () {
+    setup.classList.add('hidden');
+  };
+
 })();
