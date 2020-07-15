@@ -15,10 +15,6 @@
       if (evt.keyCode === ENTER_KEYCODE) {
         action();
       }
-    },
-
-    randomizeColor: function (colors) {
-      return colors[Math.floor(colors.length * Math.random())];
     }
   };
 
