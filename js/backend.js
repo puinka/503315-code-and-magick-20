@@ -66,12 +66,15 @@
 
     onError: function (message) {
 
-      var errorPopup = document.createElement('div');
-      errorPopup.style = 'position: absolute; padding: 20px; width: 30%; font-size: 16px; text-align: center; display: block; color: #ee4830; background-color: #fff; z-index: 10';
-      errorPopup.style.top = 50 + '%';
-      errorPopup.style.left = 35 + '%';
-      errorPopup.textContent = message;
-      document.body.insertAdjacentElement('afterbegin', errorPopup);
+      var node = document.createElement('div');
+      node.style = 'z-index: 100; margin: 0 auto; text-align: center; background-color: red;';
+      node.style.position = 'absolute';
+      node.style.left = 0;
+      node.style.right = 0;
+      node.style.fontSize = '30px';
+
+      node.textContent = message;
+      document.body.insertAdjacentElement('afterbegin', node);
     }
 
   };

@@ -2,7 +2,52 @@
 
 (function () {
 
+  var setup = document.querySelector('.setup');
+  var setupOpen = document.querySelector('.setup-open');
+  var setupClose = setup.querySelector('.setup-close');
   var userNameInput = document.querySelector('.setup-user-name');
+
+  var openPopup = function () {
+    setup.classList.remove('hidden');
+
+    document.addEventListener('keydown', function (evt) {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        setup.classList.add('hidden');
+      }
+    });
+  };
+
+  var closePopup = function () {
+    setup.classList.add('hidden');
+
+    document.removeEventListener('keydown', function (evt) {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        setup.classList.add('hidden');
+      }
+    });
+  };
+
+  setupOpen.addEventListener('click', function () {
+    openPopup();
+  });
+
+  setupOpen.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Enter') {
+      openPopup();
+    }
+  });
+
+  setupClose.addEventListener('click', function () {
+    closePopup();
+  });
+
+  setupClose.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Enter') {
+      closePopup();
+    }
+  });
 
   userNameInput.addEventListener('invalid', function () {
     if (userNameInput.validity.valueMissing) {
@@ -22,5 +67,6 @@
       userNameInput.setCustomValidity('');
     }
   });
+
 })();
 
